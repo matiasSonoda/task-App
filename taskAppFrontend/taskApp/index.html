@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+  <link rel="stylesheet" href="../taskApp/css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <header class="cabecera">  
+    <h1 id="titulo">TaskApp</h1>
+  </header>
+  <p ip="descripcion">Gestiona tus tareas, se eficiente, enfocate en el progreso de tus proyectos</p>
+  <div id="border-calendar" class="border-calendar">
+    <div id="calendar" class="calendar"></div>
+  </div>
+
+  <div class="container">
+    <!-- Lista de tareas-->
+    <main>
+      <h2>Lista de Tareas:</h2>
+      <section id="task-list-section"></section>
+    </main>
+     <!-- Si no hay tareas -->
+  </div> 
+      <!-- Formulario para agregar tareas -->
+       <form id="formulario">
+        <!-- Input para el titulo de la tarea-->
+        <label for="entrada-titulo">Titulo de la tarea:</label>
+        <input type="text" id="entrada-titulo" name="title" placeholder="Escribe una nueva tarea..." required>
+        <br>
+        <!-- Input para la descripcion-->
+         <label for="entrada-descripcion">Descripcion:</label>
+        <textarea id="entrada-descripcion" name="description" placeholder="Escriba una breve descripcion..."></textarea>
+        <br>
+        <!--Input para la fecha limite-->
+        <label for="entrada-start">Inicio</label>
+        <input type="datetime-local" name="start" id="entrada-start" required>
+        <label for="entrada-end">Fin</label>
+        <input type="datetime-local" name="end" id="entrada-end" required>
+        <!-- boton para agregar la tarea-->
+        <button type="submit" id="agregar-tarea-btn">Agregar</button>
+      </form>
+
+      <div id="edit-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Editar tarea</h2>
+          <form id="edit-task-form">
+            <label for="edit-title">Titulo:</label>
+            <input type="text" id="edit-title" name="title" required>
+            <label for="edit-description">Descripcion:</label>
+            <textarea name="description" id="edit-description"></textarea>
+            <label for="edit-start">Inicio:</label>
+            <input type="datetime-local" name="start" id="edit-start" required>
+            <label for="edit-end">Fin:</label>
+            <input type="datetime-local" name="end" id="edit-end" required>
+            <button type="submit" class="update-task" id="update-task">Guardar cambios</button>
+            <button type="button" class="delete-task" id="delete-task">Eliminar tarea</button>
+          </form>
+        </div>
+      </div>
+
+  <footer>
+    © 2025 TaskApp
+  </footer>
+
+  <script type="module" src="../taskApp/manejoFormulario.js"    defer></script>
+  <script type="module" src="../taskApp/js/mostrarTareas.js"    defer></script>
+  <script type="module" src="../taskApp/js/eliminarTareas.js"   defer></script>
+  <script type="module" src="../taskApp//js/actualizarTarea.js" defer></script>
+  <script type="module" src="../taskApp/js/fullCalendar.js"     defer></script>
+</body>
+
+</html>
+
+

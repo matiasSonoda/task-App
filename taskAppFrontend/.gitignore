@@ -1,0 +1,15 @@
+# Node.js
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistemas de construcción
+dist/
+build/
+
+# Archivos del editor
+.vscode/
+.idea/
